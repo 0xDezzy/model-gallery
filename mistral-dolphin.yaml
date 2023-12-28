@@ -8,7 +8,7 @@ urls:
 - https://huggingface.co/TheBloke/dolphin-2.5-mixtral-8x7b-GGUF
 
 config_file: |
-  name: mistral
+  name: mistral-dolphin
   context_size: 4096
   f16: true
   mmap: true
