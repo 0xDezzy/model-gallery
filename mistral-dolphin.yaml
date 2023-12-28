@@ -42,4 +42,4 @@ prompt_templates:
 files:
 - filename: "dolphin-2.5-mixtral-8x7b.Q8_0.gguf"
   sha256: "3a3c74c0bf306844ef6d255fbc4369769fd4a4c274f1fe9b6c55cf623cf56aed"
-  uri: "https://huggingface.co/TheBloke/dolphin-2.5-mixtral-8x7b-GGUF/blob/main/dolphin-2.5-mixtral-8x7b.Q8_0.gguf"
+  uri: "https://huggingface.co/TheBloke/dolphin-2.5-mixtral-8x7b-GGUF/resolve/main/dolphin-2.5-mixtral-8x7b.Q8_0.gguf"
