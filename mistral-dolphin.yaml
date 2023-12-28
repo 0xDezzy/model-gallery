@@ -1,0 +1,45 @@
+name: "mistral-dolphin"
+
+description: |
+  This is a dolphin-mistral model
+
+license: "https://ai.meta.com/llama/license/"
+urls:
+- https://huggingface.co/TheBloke/dolphin-2.5-mixtral-8x7b-GGUF
+
+config_file: |
+  name: mistral
+  context_size: 4096
+  f16: true
+  mmap: true
+  threads: 4
+  parameters:
+    model: dolphin-2.5-mixtral-8x7b.Q8_0.gguf
+    temperature: 0.2
+    top_k: 40
+    top_p: 0.95
+  template:
+    chat_message: chatml
+    chat: chatml-block
+    completion: completion
+  stopwords:
+  - <|im_end|>
+
+prompt_templates:
+- name: "chatml"
+  content: |
+    <|im_start|>{{if eq .RoleName "assistant"}}assistant{{else if eq .RoleName "system"}}system{{else if eq .RoleName "user"}}user{{end}}
+    {{if .Content}}{{.Content}}{{end}}
+    <|im_end|>
+- name: "chatml-block"
+  content: |
+    {{.Input}}
+    <|im_start|>assistant
+- name: "completion"
+  content: |
+    {{.Input}}
+    
+files:
+- filename: "dolphin-2.5-mixtral-8x7b.Q8_0.gguf"
+  sha256: "3a3c74c0bf306844ef6d255fbc4369769fd4a4c274f1fe9b6c55cf623cf56aed"
+  uri: "https://huggingface.co/TheBloke/dolphin-2.5-mixtral-8x7b-GGUF/blob/main/dolphin-2.5-mixtral-8x7b.Q8_0.gguf"
